@@ -7,7 +7,7 @@ Selishchev A., Krivosheenkova E., Paymushkin K.,
 import random
 
 list_of_symbols = ['"', '#', '$', '%', '&', "'", '(', ')', '*',	'+', '-', '/', ':', ';', '<', '=', '>', '@', '[', ']',
-                   '^', '`', '{', '|', '}', '~', '_', '«', '»']
+                   '^', '`', '{', '|', '}', '~', '_', '«', '»', '—']
 end_symbols = [',', '.', '!', '?']
 spaces = [' .', ' ,', ' !', ' ?']
 
@@ -20,18 +20,16 @@ while True:
         print('Файл {} не найден'.format(file_str))
         continue
     break
-with open('output.txt', 'w', encoding="UTF-8") as f_out:
-    for i in text:
-        if i in list_of_symbols:
-            text = text.replace(i, '')
-    for j in spaces:
-        if j in text:
-            if j == ' .':
-                text = text.replace(j, '.')
-            elif j == ' ,':
-                text = text.replace(j, ',')
-            elif j == ' !':
-                text = text.replace(j, '!')
-            elif j == ' ?':
-                text = text.replace(j, '?')
-    f_out.write(text)
+for i in text:
+    if i in list_of_symbols:
+        text = text.replace(i, '')
+for j in spaces:
+    if j in text:
+        if j == ' .':
+            text = text.replace(j, '.')
+        elif j == ' ,':
+            text = text.replace(j, ',')
+        elif j == ' !':
+            text = text.replace(j, '!')
+        elif j == ' ?':
+            text = text.replace(j, '?')
