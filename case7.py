@@ -13,6 +13,7 @@ list_of_symbols = ['"', '#', '$', '%', '&', "'", '(', ')', '*',	'+', '/', ':', '
 end_symbols = ['.', '!', '?']
 spaces = [' .', ' ,', ' !', ' ?']
 
+
 def create_dict(ltxt):
     d = defaultdict(list)
     unique_word = []
@@ -34,6 +35,7 @@ def create_dict(ltxt):
                     d[wrd].append(stn)
     return d
 
+  
 while True:
     try:
         file_str = input('{}'.format(ru_local.NUM))
@@ -58,13 +60,13 @@ for j in spaces:
         elif j == ' ?':
             text = text.replace(j, '?')
 
-#Divide the text into words and list
+# Divide the text into words and list
 list_text = list(text.split())
 
-#We get "links and links" and write to the dictionary function create_dict ()
+# We get "links and links" and write to the dictionary function create_dict ()
 dict_txt = create_dict(list_text)
 
-#Get a list of starting words - starting with a capital letter
+# Get a list of starting words - starting with a capital letter
 start_words = []
 for ch in list_text:
     if ch == ch.capitalize():
