@@ -58,13 +58,13 @@ for j in spaces:
         elif j == ' ?':
             text = text.replace(j, '?')
 
-#Делим текст на слова и заносим в список
+#Divide the text into words and list
 list_text = list(text.split())
 
-#Получаем "звенья и связи" и заносим в словарь функцией create_dict()
+#We get "links and links" and write to the dictionary function create_dict ()
 dict_txt = create_dict(list_text)
 
-#Получаем список стартовых слов - начинающихся с заглавной буквы
+#Get a list of starting words - starting with a capital letter
 start_words = []
 for ch in list_text:
     if ch == ch.capitalize():
