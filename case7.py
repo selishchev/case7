@@ -6,6 +6,7 @@ Selishchev A., Krivosheenkova E., Paymushkin K.,
 
 import random
 from collections import defaultdict
+import ru_local
 
 list_of_symbols = ['"', '#', '$', '%', '&', "'", '(', ')', '*',	'+', '/', ':', ';', '<', '=', '>', '@', '[', ']',
                    '^', '`', '{', '|', '}', '~', '_', '«', '»', '—']
@@ -35,7 +36,7 @@ def create_dict(ltxt):
 
 while True:
     try:
-        file_str = input('Имя файла: ')
+        file_str = input('{}'.format(ru_local.NUM))
         with open(file_str) as f_in:
             text = f_in.read()
     except FileNotFoundError:
@@ -59,11 +60,9 @@ for j in spaces:
 
 #Делим текст на слова и заносим в список
 list_text = list(text.split())
-print(list_text)
 
 #Получаем "звенья и связи" и заносим в словарь функцией create_dict()
 dict_txt = create_dict(list_text)
-print(dict_txt)
 
 #Получаем список стартовых слов - начинающихся с заглавной буквы
 start_words = []
@@ -72,16 +71,13 @@ for ch in list_text:
         if not ch in start_words:
             start_words.append(ch)
 
-print(start_words)
-
 last_words = []
 for sh in list_text:
     if sh in end_symbols:
         if not sh in last_words:
             last_words.append(sh)
-print(last_words)
 
-n = int(input())
+n = int(input('{}'.format(ru_local.NUM)))
 rave_text = []
 for i in range(0,n):
     w1 = random.choice(start_words)
